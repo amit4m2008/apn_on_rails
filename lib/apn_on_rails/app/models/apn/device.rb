@@ -13,7 +13,7 @@ class APN::Device < APN::Base
   has_many :notifications, :class_name => 'APN::Notification'
 
   validates_uniqueness_of :token
-  validates_format_of :token, :with => /\A[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}+\z/
+  validates_format_of :token, :with => /\^[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\$/
 
   before_save :set_last_registered_at
 
